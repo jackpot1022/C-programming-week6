@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+    char arr[100][80];
+    int gesu = 0;
+
+    scanf("%d", &gesu);
+    for (int a = 0, b = 0; a < gesu; ++a)
+    {              
+            scanf("%s", &arr[a][b]);    
+    }
+    for (int k = 0, score = 0; k < gesu ; ++k)
+    {
+        score = 0;
+        for (int j = 0; arr[k][j] != '\0'; ++j)
+        {
+            if (arr[k][j] == 'O')
+            {   
+                if (j == 0)
+                {
+                    score += 1;
+                    continue;
+                }
+                else
+                {
+                    for (int i = j - 1; arr[k][i] == 'O'; --i)
+                    {
+                        score += 1;
+                    }
+                }
+                score += 1;
+            }
+        }
+        printf("%d\n", score);
+    }
+    return 0;
+}
