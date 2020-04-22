@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+	int gesu = 0, sum = 0;
+	int su = '\0';
+
+	scanf("%d", &gesu);
+	for (int i = 0; i < gesu ; i++)
+	{
+		scanf("%1d", &su);
+		sum += su;
+	}
+	
+	printf("%d", sum);
+    return 0;
+}
