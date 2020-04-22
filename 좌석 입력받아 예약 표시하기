@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char jasuk[4][5][32] = { '\0' };
+    char reservedjasuk[6] = "A1";
+
+    do
+    {
+        strcpy(jasuk[(int)(reservedjasuk[0] - 'A')][(int)(reservedjasuk[1] - '1')], "(예약)");
+
+        printf("#   1    2    3    4    5\n");
+        printf("A %6s %6s %6s %6s %6s\n", jasuk[0][0], jasuk[0][1], jasuk[0][2], jasuk[0][3], jasuk[0][4] );
+        printf("B %6s %6s %6s %6s %6s\n", jasuk[1][0], jasuk[1][1], jasuk[1][2], jasuk[1][3], jasuk[1][4]);
+        printf("C %6s %6s %6s %6s %6s\n", jasuk[2][0], jasuk[2][1], jasuk[2][2], jasuk[2][3], jasuk[2][4]);
+        printf("D %6s %6s %6s %6s %6s\n", jasuk[3][0], jasuk[3][1], jasuk[3][2], jasuk[3][3], jasuk[3][4]);
+
+        printf("A2, B4, 0(종료)와 같이, 예약 희망 좌석을 입력하세요 : ");
+        scanf("%s", reservedjasuk);
+    } while ((reservedjasuk[0] >= 'A' ) && (reservedjasuk[0] <= 'D') && (reservedjasuk[1] >= '1') && (reservedjasuk[1] <= '5'));
+
+    return 0;
+}
